@@ -21,7 +21,9 @@ const Car = () => {
                 <img src={image} alt={name} />
               </div>
               <h3 className='text-2xl font-bold'>{name}</h3>
-              <h5>Price Starting From <span className="font-bold">${price}</span></h5>
+              <h5>
+                Price Starting From <span className="font-bold">&#8377;{price}</span>
+              </h5>
             </div>
           </div>
         ))}

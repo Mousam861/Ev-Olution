@@ -3,6 +3,7 @@ import Background from './Components/Background/Background'
 import Navbar from './Components/Navbar/Navbar'
 import Hero from './Components/Hero/Hero'
 import Car from './Components/CarModels/Car'
+import NextStep from './Components/CarModels/NextStep'
 
 export const App = () => {
 
@@ -14,12 +15,13 @@ export const App = () => {
 
   const [picture,setPicture] = useState(0)
   const [video,setVideo] = useState(false)
+
    {/* Transition delay in changing hero picture after 5 sec */}
-  // useEffect(()=>{
-  //   setInterval(()=>{
-  //     setPicture((count)=> count===2?0:count+1)
-  //   },5000)
-  // },[])
+  useEffect(()=>{
+    setInterval(()=>{
+      setPicture((count)=> count===2?0:count+1)
+    },5000)
+  },[])
 
   return (
     <div>
@@ -27,6 +29,7 @@ export const App = () => {
       <Background picture={picture} video={video} />
       <Hero picture={picture} text={text[picture]} video={video} setPicture={setPicture} setVideo={setVideo}/>
       <Car />
+      <NextStep />
     </div>
   )
 }
